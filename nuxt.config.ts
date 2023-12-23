@@ -7,4 +7,5 @@ export default defineNuxtConfig({
       domain: '/references/',
     }
   },
+  build: { transpile: ['gsap'] }
 })

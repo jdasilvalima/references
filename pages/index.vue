@@ -1,7 +1,7 @@
 <template>
   <div>
    <Header />
-   <Presentation />
+   <Parallax />
    <Projects />
    <About />
    <Footer />
