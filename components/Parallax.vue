@@ -1,25 +1,64 @@
 <template>
   <div class="template">
-   <p>Parallax</p>
+   <h3>Div Moove</h3>
    <div class="box a">a</div>
-   <div class="box b">b</div>
-   <div ref="boxC" class="box c">c</div>
+   <div ref="boxB" class="box b">b</div>
+   <div class="box c">c</div>
+   <div class="box d">d</div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const { $gsap } = useNuxtApp();
-const boxC = ref(null);
-
-console.log('test2');
+const boxB = ref(null);
 
 onMounted(() => {
-  console.log('test');
-  $gsap.to(boxC.value, {
+
+  $gsap.to(".a", {
+    scrollTrigger: ".a", //wait for the div to be seen
     x: 400,
     rotation: 360,
     duration: 3
-  })
+  });
+
+  $gsap.to(boxB.value, {
+    scrollTrigger: {
+      trigger: boxB.value,
+      start: "top center", // indicate when to start animation depending of the viewport
+      end: () => "+=" + boxB.value.offsetWidth,
+      //markers: true, // visualize scroll, start and stop animation
+      toggleActions: "play pause reverse pause" // indicate how to play when no off to be seen
+    },
+    x: 600,
+    rotation: 360,
+    duration: 4
+  });
+
+  $gsap.to(".c", {
+    scrollTrigger: {
+      trigger: ".a",
+      start: "top 10px", // indicate when to start animation depending of the viewport
+      endTrigger: ".b",
+      end: "bottom top",
+      //markers: true, // visualize scroll, start and stop animation
+      toggleActions: "play pause reverse pause" // indicate how to play when no off to be seen
+    },
+    x: 600,
+    rotation: 360,
+    duration: 4
+  });
+
+  $gsap.to(".d", {
+    scrollTrigger: {
+      trigger: ".c",
+      start: "top center",
+      end: "+=350px",
+      scrub: 2, // true or seconds, depend if scroll or not
+      markers: true, // visualize scroll, start and stop animation
+    },
+    x: 800,
+    duration: 3
+  });
 })
 
 
@@ -46,6 +85,11 @@ onMounted(() => {
 
 .c {
   background-color: #e26c16;
+  margin-top: 70px
+}
+
+.d {
+  background-color: #e21672;
   margin-top: 70px
 }
 </style>

@@ -5,11 +5,4 @@
 </template>
 
 <script setup>
-console.log('header');
-
-onMounted(() => {
-  console.log('header onMounted');
-})
-
-
 </script>
