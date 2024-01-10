@@ -1,5 +1,5 @@
 <template>
   <div class="template">
-   <p>Footer</p>
+   <h3>Button effect</h3>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
   <div class="template">
-   <p>Projects</p>
+   <h3>Dot mouse</h3>
   </div>
 </template>

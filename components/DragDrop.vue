@@ -1,5 +1,5 @@
 <template>
   <div class="template">
-   <p>About</p>
+   <h3>Drag and Drop</h3>
   </div>
 </template>

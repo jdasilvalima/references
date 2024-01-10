@@ -1,9 +1,15 @@
 <template>
   <div>
-   <Header />
+   <ResizeLetter />
+   <GsapExercice />
+   <Svg />
+   <DotMouse />
+   <Text />
+   <Button />
+   <Scroll />
+   <WebGl />
+   <Clipath />
    <Parallax />
-   <Projects />
-   <About />
-   <Footer />
+   <DragDrop />
   </div>
 </template>

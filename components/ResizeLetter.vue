@@ -1,6 +1,6 @@
 <template>
   <div class="template">
-   <p>Header</p>
+   <h3>Letter resizing with screen size</h3>
   </div>
 </template>
 
